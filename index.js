@@ -20,7 +20,7 @@ module.exports = function() {
   }
 
   new CronJob({
-    cronTime: "*/30 * * * *",
+    cronTime: "*/15 * * * *",
     onTick: ping,
     start: true
   });
@@ -30,7 +30,10 @@ module.exports = function() {
 
 function ping() {
   return getSelHost()
-    .then(host => got(host + pingEndpoint))
+    .then(host => {
+      console.log('### TESTING -- Hitting endpoint: ', host + pingEndpoint);
+      return got(host + pingEndpoint);
+    })
     .catch(err => console.error("Error pinging self!\n" + err.stack));
 }
 
