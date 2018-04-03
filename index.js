@@ -49,5 +49,3 @@ function getSelfHost() {
     });
   });
 }
-
-module.exports();
