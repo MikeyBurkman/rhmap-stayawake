@@ -20,7 +20,7 @@ module.exports = function() {
   }
 
   new CronJob({
-    cronTime: "*/30 * * * *",
+    cronTime: "0 2 * * *", // 2 am every day
     onTick: ping,
     start: true
   });
