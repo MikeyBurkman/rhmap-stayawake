@@ -1,6 +1,6 @@
 {
   "name": "rhmap-stayawake",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Keeps your app from being suspended automatically due to inactivity",
   "main": "index.js",
   "scripts": {
