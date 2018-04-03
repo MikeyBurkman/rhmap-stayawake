@@ -29,7 +29,7 @@ module.exports = function() {
 };
 
 function ping() {
-  return getSelHost()
+  return Promise.resolve('http://localhost') //getSelfHost()
     .then(host => {
       host = 'http://localhost';
       console.log('### TESTING -- Hitting endpoint: ', host + pingEndpoint);
