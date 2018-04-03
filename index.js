@@ -15,7 +15,7 @@ module.exports = function() {
   }
 
   if (!process.env.FH_INSTANCE) {
-    console.warn('No FH_INSTANCE env var deteced. rhmap-keepawake only works when deployed on RHMAP.');
+    console.warn('rhmap-stayawake: No FH_INSTANCE env var detected. rhmap-keepawake only works when deployed on RHMAP.');
     return;
   }
 
@@ -31,7 +31,7 @@ module.exports = function() {
 function ping() {
   return getSelfHost()
     .then(host => got(host + pingEndpoint))
-    .catch(err => console.error("Error pinging self!\n" + err.stack));
+    .catch(err => console.error("rhmap-stayawake: Error pinging self!\n" + err.stack));
 }
 
 function getSelfHost() {
